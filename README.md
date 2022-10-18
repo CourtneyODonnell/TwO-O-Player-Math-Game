@@ -1,7 +1,4 @@
-
-
-
-# players
+# GAME
   Players will take turns answering randomly generated math (addition) questions. Each time a player answers a question incorrectly, they lose one life. If the player answers a question correctly, they do not lose any lives.
 
  relevant information
@@ -31,30 +28,26 @@
 
   this class(es) will contain user I/O.
 
+note: doesnt keep track of whose turn it is
 
 
-# answers
+# answers will need to link to questions
   answers are input by the player whose turn it is. If the input answer matches the correct answer, the player keeps their lives. If the input answer is wrong, the player will lose one life from their total of 3.
 
   relevant information
     does player answer match correct answer?
   
   What above methods need in order to be initialized?
-    correct answer
+    correct answer - from questions
     player answer
     
-  What public methods will be defined on them?
-    whose turn is it?
-
-  this class should manage who the current_player is.
-    
-    whose turn is it?
 
   this class(es) will contain user I/O.
+new instance of answer when answered by player
 
 
 
-# life score (x/y)
+# Player store answers and lives
   displays at the bottom of the "turn". if a player gets the input answer incorrect, one life will be subtracted from numerator. If the player's lives reach 0, the player loses the game and the other player wins.
 
   relevant information
