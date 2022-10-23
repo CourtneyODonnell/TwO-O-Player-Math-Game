@@ -1,20 +1,34 @@
-# Player class
-=begin
-displays at the bottom of the "turn". if a player gets the input answer incorrect, one life will be subtracted from numerator. If the player's lives reach 0, the player loses the game and the other player wins.
-
-  relevant information
-    3 total lives
-    how many lives remaining (updated after each turn)
-    Did the player win or lose?
-    does the player have more than 0 lives left?
-
-    What above methods need in order to be initialized?
-      win or loss information from the turn
-      if life score is 0, game over
-    no user io
-=end
 class Player
+  # class variable
+  @@number_of_players = 0
+
+  # instance variables to read from outside the class
+  attr_reader :score, :short, :long
+
+  #initialize method when new instance of class is created
   def initialize
+    # class variable
+    @@number_of_players +=1
+
+    # shortened version of player name
+    self.short = "P#{@@number_of_players}"
+    # long version of player name
+    self.long = "Player#{@@number_of_players}"
+    # score of player
+    self.score = 3
+  end 
+  
+  # lose a point method
+  def lose_points
+    self.score -= 1
   end
 
+  # final score method to display final score -- possibly more concise was to do this?
+  def final_score
+    "#{score}/3"
+  end
+  
+  # protected method to respond to instance variables (write) (see README for more information / link to article)
+  protected
+  attr_writer :score, :short, :long
 end

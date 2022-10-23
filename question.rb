@@ -1,23 +1,17 @@
-# Question class
-=begin
-questions are generated for each turn by randomly picking two numbers between 1 and 20 to be added together. The answer to the question must match the answer given by the player, or else the player will lose one life.
+class Question 
+  # instance variables to read from outside the class
+  attr_reader :number1, :number2
   
-  relevant information
-    is it a new turn?
-
-  What above methods need in order to be initialized?
-    needs to be initialized by a player winning or losing their turn
-
-  What public methods will be defined on them?
-  if new turn, generate a new question
-
-  this class(es) will contain user I/O.
-
-note: doesnt keep track of whose turn it is
-=end
-class Question
+  # initialize method when new instance of class is created
   def initialize
+    # each number to be added  is a random number between 1 and 20
+    @number1 = rand(1..20)
+    @number2 = rand(1..20)
   end
-  print "What is #{number1} + #{number2}?"
-  @player_answer = gets.chomp
+
+  # question method to be called for each new turn
+  def questions
+  "What is the value of #{number1} + #{number2}?"
+  end
+
 end
